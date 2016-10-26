@@ -3,7 +3,10 @@
 <head>
   <title>User Profiles</title>
 </head>
-<body ng-controller="MainController">
+<body ng-controller="mainController">
+  <button type="button" name="button" ng-click='next()'>Next</button>
+  page {{currentPage}}
+  <button type="button" name="button" ng-click='prev()'>Previous</button>
   <div ng-repeat="user in users">
     <h1>{{user.first_name}} {{user.last_name}}</h1>
     <img src="{{user.avatar}}">

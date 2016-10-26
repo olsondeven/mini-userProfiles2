@@ -1,5 +1,12 @@
 angular.module('userProfiles').service('mainService', function($http) {
 
+this.getUsers = function(pageNum){
+	return $http({
+		method: 'GET',
+		url: 'http://reqres.in/api/users?page=' + pageNum,
+	});
+};
+
 	var data = [
     {
         "id": 0,
@@ -20,10 +27,4 @@ angular.module('userProfiles').service('mainService', function($http) {
         "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg"
     }
   ];
-
-  this.getUsers = function() {
-    return data;
-  };
-
-
 });
